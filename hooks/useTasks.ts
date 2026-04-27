@@ -141,11 +141,13 @@ export function useTasks(): UseTasksReturn {
       console.log("Erro: ", err);
     }
   }
-  
+
+   // Carrega as tarefas quando o componente é montado
   useEffect(() => {
     fetchTasks(); // Executa apenas uma vez na montagem
-  }, []);
+  }, []); //Array vazio = executa so na montagem
 
+  //Retorna estados e funções para os componentes
   return{
     tasks,
     loading,
